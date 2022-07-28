@@ -16,20 +16,64 @@ function Hover() {
           if (event.key==="ArrowRight") {
             angle -= 40;
           }
-          else if (event.key==="ArrowLeft") {
+          if (event.key==="ArrowLeft") {
             angle += 40;
           }
           carousel.style.transform = "rotateY(" + angle + "deg)";
         }} tabIndex="0">
-          <div key={1} className="carousel__cell">1</div>
-          <div key={2} className="carousel__cell">2</div>
-          <div key={3} className="carousel__cell">3</div>
-          <div key={4} className="carousel__cell">4</div>
-          <div key={5} className="carousel__cell">5</div>
-          <div key={6} className="carousel__cell">6</div>
-          <div key={7} className="carousel__cell">7</div>
-          <div key={8} className="carousel__cell">8</div>
-          <div key={9} className="carousel__cell">9</div>
+          <div key={1} className="carousel__cell">
+            <img src={require('./images/1.jpg')} alt="1.jpg"/>
+          </div>
+          <div key={2} className="carousel__cell">
+            <img src={require('./images/2.jpg')} alt={"2.jpg"}/>
+          </div>
+          <div key={3} className="carousel__cell">
+            <img src={require('./images/3.jpg')} alt={"3.jpg"}/>
+          </div>
+          <div key={4} className="carousel__cell">
+            <img src={require('./images/4.jpg')} alt={"4.jpg"}/>
+          </div>
+          <div key={5} className="carousel__cell">
+            <img src={require('./images/5.jpg')} alt={"5.jpg"}/>
+          </div>
+          <div key={6} className="carousel__cell">
+            <img src={require('./images/6.jpg')} alt={"6.jpg"}/>
+          </div>
+          <div key={7} className="carousel__cell">
+            <img src={require('./images/7.jpg')} alt={"7.jpg"}/>
+          </div>
+          <div key={8} className="carousel__cell">
+            <img src={require('./images/8.jpg')} alt={"8.jpg"}/>
+          </div>
+          <div key={9} className="carousel__cell">
+            <img src={require('./images/9.jpg')} alt={"9.jpg"}/>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function Modal() {
+  return (
+    <div>
+      <div id="container">
+        <h2>Lorem Ipsum</h2>
+        <div id="lorem-ipsum"/>
+      </div>
+      <div id="modal" className="modal-overlay">
+        <div className="modal-window">
+          <div className="title">
+            <h2>모달</h2>
+          </div>
+          <div className="close-area">X</div>
+          <div className="content">
+            <p>가나다라마바사 아자차카타파하</p>
+            <p>가나다라마바사 아자차카타파하</p>
+            <p>가나다라마바사 아자차카타파하</p>
+            <p>가나다라마바사 아자차카타파하</p>
+
+          </div>
         </div>
       </div>
     </div>
@@ -38,8 +82,9 @@ function Hover() {
 
 function App() {
   return (
-    <div id="body">
+    <div>
       <Hover/>
+      <Modal/>
     </div>
   );
 }
