@@ -45,7 +45,7 @@ img {
     position: absolute;
     left: 0;
     top: 0;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -63,11 +63,16 @@ img {
     -webkit-backdrop-filter: blur( 13.5px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    width: 400px;
+    width: 960px;
     height: 500px;
     position: relative;
     padding: 10px;
+    top: 790px;
+
+    transition: transform 1s;
+    transition-timing-function: ease-out;
 }
+
 #modal .title {
     padding-left: 10px;
     display: inline;

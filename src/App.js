@@ -61,12 +61,21 @@ function Modal() {
         <h2>Lorem Ipsum</h2>
         <div id="lorem-ipsum"/>
       </div>
-      <div id="modal" className="modal-overlay">
+      <div id="modal" className="modal-overlay" onClick={event=>{
+        if (event.target.classList.contains('modal-overlay')) {
+          event.target.style.display = "none";
+          let modalWindow = document.querySelector('.modal-window')
+          modalWindow.style.transform = "translateY(0px)";
+        }
+      }}>
         <div className="modal-window">
           <div className="title">
             <h2>모달</h2>
           </div>
-          <div className="close-area">X</div>
+          <div className="close-area" onClick={event=>{
+            const modal = document.getElementById('modal');
+            modal.style.display = "none";
+          }}>X</div>
           <div className="content">
             <p>가나다라마바사 아자차카타파하</p>
             <p>가나다라마바사 아자차카타파하</p>
@@ -80,14 +89,29 @@ function Modal() {
   )
 }
 
+function ModalButton() {
+  return (
+    <div>
+      <button onClick={event=>{
+        let modal = document.getElementById('modal');
+        let modalWindow = document.querySelector('.modal-window');
+        modal.style.display = "flex";
+        setTimeout(function(){
+          modalWindow.style.transform = "translateY(-500px)";
+        },100);
+      }} tabIndex="-1">Modal Button</button>
+    </div>
+  )
+}
+
 function App() {
   return (
     <div>
       <Hover/>
       <Modal/>
+      <ModalButton/>
     </div>
   );
 }
-
 
 export default App;
